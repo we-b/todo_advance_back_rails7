@@ -7,7 +7,6 @@ class GenresController < ApplicationController
   end
 
   def create
-    binding.pry
     Genre.create(genre_params)
     genres_all
   end

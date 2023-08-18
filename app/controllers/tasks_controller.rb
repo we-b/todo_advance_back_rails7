@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :select_task, only: [:update, :destroy, :update_status]
+  skip_before_action :verify_authenticity_token
 
   def index
     tasks_all

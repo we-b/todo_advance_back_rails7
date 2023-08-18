@@ -1,11 +1,13 @@
 class GenresController < ApplicationController
   before_action :select_genre, only: [:destroy]
-
+  skip_before_action :verify_authenticity_token
+  
   def index
     genres_all
   end
 
   def create
+    binding.pry
     Genre.create(genre_params)
     genres_all
   end
